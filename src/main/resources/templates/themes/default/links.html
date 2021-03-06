@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="themes/default/header::header(title='友情链接',keywords=null)"></div>
+<body>
+<article class="main-content post-page">
+    <div id="post-content" class="post-content">
+        <h3>基本信息</h3>
+        <pre><code class="lang-md hljs markdown">
+            网站名称：KingBlog
+            网站地址：http://www.expqing.com</code></pre>
+        <p>我的邮箱:guoqing4387@gmail.com</p>
+        <p>如果需要可以联系我 ^_^</p></div>
+    <block >
+        <a href="https://weibo.com/u/3219623373"><image src="https://weibo.com/favicon.ico" ></image>微博</a>
+    </block>
+    <block >
+        <a href="https://www.zhihu.com/people/guo-qing-93-23/activities"><image src="https://www.zhihu.com/favicon.ico"></image>知乎</a>
+    </block>
+    <block >
+        <a href="https://github.com/KingGeGeR"><image src="https://github.com/favicon.ico"></image>Github</a>
+    </block>
+
+
+        <h3>友情链接</h3>
+        <ul class="flinks">
+            <th:block th:each="link : ${links}">
+                <li>🔒 <a th:href="${link.slug}" target="_blank" th:text="${link.name}"></a></li>
+            </th:block>
+        </ul>
+        <h3>关于本站</h3>
+        <blockquote>
+            <ul>
+                <li><p>本站基于SMM搭建</p></li>
+                <li><p>部署在阿里云服务器上</p></li>
+                <li><p>建站代码参考github仓库中的blog，同时感谢该开源项目的帮助</p></li>
+            </ul>
+        </blockquote>
+</article>
+</body>
+<div th:replace="themes/default/footer::footer"></div>
+</html>
